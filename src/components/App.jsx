@@ -8,6 +8,7 @@ export const App = () => {
   return (
     <Wrapper>
       <h2>Phonebook</h2>
+      <h2>TS</h2>
       <ContactForm />
       <div>
         <h2>Contacts</h2>
