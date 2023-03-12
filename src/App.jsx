@@ -23,7 +23,6 @@ export const App = () => {
           <ContentStyled>
             <UserRoutes />
           </ContentStyled>
-          <FooterStyled>Footer</FooterStyled>
         </Layout>
       </BrowserRouter>
     </Space>

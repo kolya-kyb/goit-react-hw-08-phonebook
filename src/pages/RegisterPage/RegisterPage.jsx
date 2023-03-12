@@ -16,16 +16,14 @@ const RegisterPage = () => {
   const dispatch = useDispatch();
 
   const handleSignup = data => {
-    console.log(data);
     dispatch(signup(data));
   };
 
   return (
+    <>
+    <h2>Registration</h2>
     <RegisterForm initialValues={initialValues} onFinish={handleSignup} />
-    // <div className="container">
-    //     <h1 className="page-title">Register page</h1>
-    //     <RegisterForm onSubmit={handleSignup} />
-    // </div>
+    </>
   );
 };
 

@@ -28,4 +28,5 @@ export const NavbarWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
+  justify-content: space-between;
 `;

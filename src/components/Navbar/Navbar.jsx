@@ -4,9 +4,14 @@ import NavbarUser from './NavbarUser/NavbarUser';
 import { LinkStyled, MenuList, NavbarWrapper } from './Navbar.styled';
 
 import items from './items';
+import { useSelector } from 'react-redux';
+
 
 const Navbar = () => {
-  const elements = items.map(({ id, text, link }) => (
+const isLogin = useSelector(state =>state.auth.isLogin);
+
+  const filteredItems = !isLogin ? items.filter(item => !item.private) : items;
+  const elements = filteredItems.map(({ id, text, link }) => (
     <li key={id}>
       <LinkStyled to={link}>{text}</LinkStyled>
     </li>
@@ -15,8 +20,8 @@ const Navbar = () => {
   return (
     <NavbarWrapper>
       <MenuList>{elements}</MenuList>
-      <NavbarAuth />
-      <NavbarUser />
+      {isLogin?         <NavbarUser />
+        :<NavbarAuth />}
     </NavbarWrapper>
   );
 };
