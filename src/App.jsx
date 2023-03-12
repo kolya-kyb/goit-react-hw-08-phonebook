@@ -4,7 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import UserRoutes from './UserRoutes';
 import { Layout, Space } from 'antd';
 
-import { HeaderStyled, ContentStyled, FooterStyled } from './App.slyled';
+import { HeaderStyled, ContentStyled } from './App.slyled';
 
 export const App = () => {
   return (
