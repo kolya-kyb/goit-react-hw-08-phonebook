@@ -1,7 +1,10 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import RegisterForm from 'components/RegisterForm/RegisterForm';
+import ErrorMessage from '../../components/Message/ErrorMessage';
 import { signup } from 'redux/auth/authOperations';
+
+
 
 const initialValues = {
   name: '',
@@ -10,17 +13,20 @@ const initialValues = {
 };
 
 const RegisterPage = () => {
-  // const onFinish = values => {
-  //   console.log('Received values of form: ', values);
-  // };
+
+  const {error} = useSelector(state => state.auth)
+
+
   const dispatch = useDispatch();
 
   const handleSignup = data => {
-    dispatch(signup(data));
+    dispatch(signup(data))
   };
 
+
   return (
-    <>
+  <>
+    {error &&<ErrorMessage />}
     <h2>Registration</h2>
     <RegisterForm initialValues={initialValues} onFinish={handleSignup} />
     </>
