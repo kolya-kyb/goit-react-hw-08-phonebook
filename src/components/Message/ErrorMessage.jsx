@@ -15,9 +15,8 @@ const ErrorMessage = () => {
     });
   };
 useEffect(() => {
-  console.log('useefeect')
   errorMessage();
-},[])
+},[errorMessage])
 return  (<>{contextHolder}</> )
 
 }
